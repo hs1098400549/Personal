@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--<style>
+        .box{
+            display: flex;
+            background: #ccc;
+            width:200px;
+            height: 500px;
+            /*justify-content:space-around;*/
+            /*flex-direction: column;*//*属性决定主轴的方向（即项目的排列方向）。*/
+            /*flex-wrap: wrap;*/
+            /*flex-flow: row-reverse wrap;*//*可以写俩值*/
+            /*align-items: center;*/
+            /*align-content:space-between;*/
+        }
+        .content{
+            /*width: 100px!important;*/
+            /*height: 50%;*/
+            order: 9;/*跟层级用法一样*/
+            flex-shrink: 2;
+            background: #666;
+            flex-basis: 20px;
+            /*height: 20px;*/
+            /*flex: 0 1 auto;*/
+        }
+        .content1{
+            order: 0;
+            /*flex-grow: 2;*/
+            /*flex-shrink:1;*/
+            background: #444;
+            flex-basis: 150px;
+            /*flex: 0 2 auto;*/
+            /*align-self:center;*/
+        }
+    </style>-->
+</head>
+<script>
+    window.onload = function() {
+        var num = 1;
+        var result = function (n) {
+            num *= n;
+            if (n == 1) {
+                return;
+            }
+            result(n - 1);
+        }
+        result(10);
+        console.log(num);
+        /*oninput
+    onpropertychange*/
+        function Input(id, value){
+            this.id = id;
+            this.value = value;
+//            this.element=null;
+            this.init();
+            /*this.show=function(){
+                return 11;
+            }*/
+        }
+        Input.prototype.constructor = Input;
+    Input.prototype.init = function(){
+        this.element = document.createElement("input");
+        this.element.id = this.id;
+        this.element.value = this.value;
+    }
+        Input.prototype.show=function(){
+            return 99;
+        }
+    Input.prototype.getElement = function(){
+        return this.element;
+    }
+    var input= new Input("id", "hhahah");
+        console.log(input.element);
+    document.body.appendChild(input.element);
+        console.log(input.show());
+        Input.prototype.change = function () {
+
+        }
+    }
+</script>
+<body>
+    <!--<div class="box">
+        <div class="content">我是个</div>
+        <div class="content">学习edt</div>
+        <div class="content">学习fyg</div>
+        <div class="content1">yyyyyyy</div>
+    </div>-->
+</body>
+</html>

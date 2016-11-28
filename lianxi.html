@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title>练习</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*function fun(n, o) {
+     console.log(o)
+     return {
+     fun: function (m) {
+     return fun(m, n);
+     }
+     };
+     }
+     var a = fun(0);
+     a.fun(1);
+     a.fun(2);
+     a.fun(3);//undefined,0,0,0
+
+     var b = fun(0).fun(1).fun(2).fun(3);//undefined,0,1,2
+     var c = fun(0).fun(1);
+     c.fun(2);
+     c.fun(3);//undefined,0,1,1*/
+
+
+    /*function fun(n) {
+     console.log(n)
+     return {
+     fun: function (m) {
+     console.log(m)
+     }
+     }
+     }
+     var a = fun(5);
+     a.fun(2);*/
+
+
+    /* var fn = function a() {
+     //        alert(a);
+     console.log(1);
+     };
+     console.log(a() === fn());
+     fn();//function a(){alert(a);}
+     *//*alert(a);//a is not defined;*/
+
+
+    /* function a() {
+     console.log("function a");
+     }
+     var a;
+     console.log(a);//function a(){ console.log("function a"); }*/
+
+    /*function test() {
+     var a = 1;
+     console.log(this);
+     setTimeout(function () {
+     console.log(a);//2
+     a = 3;
+     console.log(this);
+     }, 0);
+     a = 2;
+     setTimeout(function () {
+     console.log(a);//3
+     a = 4;
+     }, 3000);
+     }
+     test();
+     alert(0);//0*/
+
+
+    /*console.log(0);
+     console.log(1);
+     console.log(2);
+     console.log(3);
+     setTimeout(function(){
+     console.log(7)
+     },0);
+     console.log(4);
+     console.log(5);
+     console.log(6);*/
+
+
+
+    /* var a=1;
+     var obj={b:2};
+     function fn(){}
+     fn.c=3;
+     function change(x,y,z){
+     //       x=4;
+     y.b=5;//obj.b=5
+     z.c=6;//
+     //       return x+ y.b+ z.c;
+     }
+     change(a,obj,fn);
+     console.log(a+obj.b+fn.c);//12*/
+
+
+
+    /*var num = 7;
+     if(typeof num == 'number'){
+     console.log(1);
+     }*/
+
+
+    //实例化出来的 对象类型用instance来判断
+    /*var obj=new Object();
+     if(obj instanceof Object){
+     console.log(10)
+     }*/
+
+
+
+    /*var hh=[];
+     console.log(Object.prototype.toString.call(hh)) ;*/
+
+
+
+    /*var result=1;
+     var hh=function(n){
+     result*=n;
+     if(n==1){
+     return;
+     }
+     console.log(result);
+     hh(n-1);
+     };
+     hh(8);*/
+    //    console.log(result);
+
+
+    /*var aa=function(){
+     console.log(arguments);
+     con sole.log(arguments.length);
+     }
+     aa(5,1,2,3,4,5,6,77,8);*/
+
+
+    /*function Person(name, age) {
+     this.name = name;
+     this.age = age;
+     this.books = ['javascript', 'php', 'java'];
+     }
+     Person.prototype.per=function(){
+     console.log(678);
+     }
+     function Job(name,age) {
+     Person.call(this,name,age);
+     }
+     Job.prototype = new Person();
+     var hh=new Job('呵呵','23');
+     hh.books.push('angular');
+     hh.per()
+     console.log(hh.books);
+     var hs=new Job('户口','24');
+     console.log(hs.books);
+     var ht=new Person('fds','24');
+     console.log(ht.books);*/
+
+
+    function HH(name,age){
+        this.name=name;
+        this,age=age;
+    }
+    /*var h = {
+        name: '喝喝',
+        age: 24
+    };*/
+    HH.prototype.name=this.name;
+    var hh=new HH('喝喝','24');
+    console.log(hh.name);
+    var fun = function (hh) {
+        function H() {
+        };
+        H.prototype = hh;
+        return new H();
+    }
+    var ff=fun();
+    console.log(ff);
+    console.log(ff.name);
+</script>
+</html>
