@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>react</title>
+    <style>
+        *{margin:0;padding:0;}
+        h1{color:black;}
+        p{background:yellow;}
+        .component{width:100px;height:100px;background:green;}
+    </style>
+    <script src="./react.js"></script>
+	<script src="./react-dom.js"></script>
+	<script src="./browser.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+	(function(){
+		var inputComponent = React.createClass(function(){
+			getInitalState:function(){
+				return {title:"nani"}
+			},
+			handleClick :function(){
+				this.setState({
+					title:"handleClick update"
+				});
+			},
+			render:function(){
+				return (
+					<div>
+						<p onClick = {this.handleClick}>
+							{this.state.title}
+						</p>
+					</div>
+				)
+			}
+		});
+		ReactDOM.render(function(){
+			<inputComponent />,document.getElementById("root")
+		});
+	 }());        
+</script>
+</body>
+</html>

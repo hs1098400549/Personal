@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>react</title>
+    <style>
+        *{margin:0;padding:0;}
+        h1{color:black;}
+        p{background:yellow;}
+        .component{width:100px;height:100px;background:green;}
+    </style>
+    <script src="./react.js"></script>
+	<script src="./react-dom.js"></script>
+	<script src="./browser.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+	(function(){
+		/*function tick(){
+			const elem = (
+				<div>
+					<h1>{new Date().toLocaleTimeString()}</h1>
+				</div>
+			);
+			ReactDOM.render(elem,document.getElementById("root"));
+		}
+		setInterval(tick,1000);	*/
+		class Comp extends React.Component{
+			constructor(props){
+				super(props);
+				this.state = {date:new Date()}
+			}
+			componentDidMount(){
+				console.log("didmount");
+				this.timerId = setInterval(
+					()=>{
+						this.setState({date:"20141008"});
+				},200);
+			}
+			componentWillUnmount(){
+				console.log("unmount");
+				clearInterval(this.timerId);
+			}
+			render(){
+				return <div>
+							<b>{this.state.date.toLocaleTimeString()}</b>
+							<p>{this.props.haha}</p>
+						</div>;
+			}
+		};
+		ReactDOM.render(<Comp haha="haha" hh="hello"/>,document.getElementById("root"));
+	 }());        
+</script>
+<!--<script type="text/babel">
+	(function(){
+		var component = React.createClass({
+			render:function(){
+				return 
+				<div className="component">
+					<h1>hello{this.props.title}</h1>
+					<p>what you say:{this.props.body}</p>
+				</div>;
+			}
+		});
+		ReactDOM.render(<div>
+					<h1>hello</h1>
+					<p>what you say</p>
+				</div>,document.getElementById("root"));
+	}());
+</script>-->
+</body>
+</html>
