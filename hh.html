@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象</title>
+</head>
+<body>
+</body>
+
+<script>
+    /*
+     var book=function(id,name,price){
+     //        私有属性
+     var num=1;
+     //        私有方法
+     function checkId(){
+     };
+     //        特权方法
+     this.getName=function(){};
+     this.setName=function(){};
+     this.getPrice=function(){};
+     this.setPrice=function(){};
+     //        对象公有属性
+     this.id=id;
+     //        对象公有方法
+     this.copy=function(){};
+     //        构造器
+     this.getName();
+     this.getPrice();
+     };
+     //    类静态公有属性（对象不能访问）
+     book.ischinese=true;
+     //    类静态公有方法（对象不能访问）
+     book.resetTime=function(){
+     console.log('new Time');
+     };
+     book.prototype={
+     //        公有属性
+     isJSBook:false,
+     //        公有方法
+     display:function(){}
+     }
+
+
+
+
+     /!*    //    类式继承
+
+     //    添加父类
+     function SubSuper() {
+     this.SubSuperValue = true;
+     }
+     //为父类添加公共方法
+     SubSuper.prototype.getSuperValue = function () {
+     return this.SubSuperValue;
+     }
+     //添加子类
+     function SubClass() {
+     this.SubValue = false;
+     }
+     //子类的原型指向父类对象
+     SubClass.prototype = new SubSuper();
+     //为子类添加公共方法
+     SubClass.prototype.getSubValue = function () {
+     return this.SubValue;
+     }
+
+     //example
+     function Perples(name, age) {
+     this.name = name;
+     this.age = age;
+     }
+     Perples.prototype.speak = function () {
+     alert('我会说话');
+     }
+     function Animate() {
+     this.eat = function () {
+     alert('我会吃');
+     }
+     }
+     Animate.prototype = new Perples();
+     var cat = new Animate();
+     cat.speak();*!/
+
+
+     //    构造函数式继承
+     function SubperClass(name){
+     this.books=['html','css','javascript','java'];
+     this.name=name;
+     }
+     SubperClass.prototype.showbooks=function(){
+     console.log(this.books);
+     }
+     function SubClass(name){
+     SubperClass.call(this,name);
+     }
+     var child1=new SubClass('哈哈');
+     var child2=new SubClass('呵呵');
+     child2.books.push('angularJs');
+     console.log(child1.books);
+     console.log(child1.name);
+     console.log(child2.books);
+     console.log(child2.name);
+
+
+     //    example
+     function Phone(color,size){
+     this.color=color;
+     this.size=size;
+     }
+     Phone.prototype.call=function(){
+     alert('打电话');
+     }
+     function TV(color){
+     Phone.call(this,color);//!**********构造函数
+     }
+     TV.prototype.catch=function(){
+     alert('看电视');
+     }
+     var Tv1=new TV('red');
+     var Tv2=new TV('blue');
+     console.log(Tv1.color);
+     console.log(Tv2.color);
+     Tv2.catch();
+     //    Tv1.call();子类不能继承父类原型上的属性
+
+
+
+
+     //    组合式继承*/
+    var a = {n: 1};
+    var b = a;
+    a.x = a = {n: 2};
+    console.log(a.x);
+    console.log(b.x);
+</script>
+</html>
