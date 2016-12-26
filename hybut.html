@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>按钮</title>
+    <style>
+        input[type=checkbox].oval {
+            visibility: hidden;
+            display: inline-block;
+        }
+
+        label.toggler {
+            border: 1px solid #e5e5e5;
+            width: 1.386rem;
+            height: 0.746rem;
+            position: absolute;
+            display: inline-block;
+            border-radius: 0.4rem;
+            right: 0;
+            top: 0;
+            background: #eeeeee;
+            z-index: 50;
+            bottom: 0;
+            margin: auto;
+            transition: 0.2s ease;
+            -webkit-transition: 0.2s ease;
+        }
+
+        label.toggler::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 80%;
+        }
+
+        label.toggler::after {
+            border: 1px solid #e5e5e5;
+            content: "";
+            display: block;
+            width: 0.746rem;
+            height: 0.746rem;
+            border-radius: 50%;
+            -webkit-transition: all .2s ease;
+            -moz-transition: all .2s ease;
+            -o-transition: all .2s ease;
+            -ms-transition: all .2s ease;
+            transition: all .2s ease;
+            position: absolute;
+            top: 0;
+            left: 0px;
+            background: #ffffff;
+            line-height: 0.8rem;
+            text-align: center;
+            bottom: 0;
+            margin: auto;
+        }
+
+        input[type=checkbox]:checked + label {
+            background: #4ed765;
+            height: 0.826rem;
+            border-color: #4ed765;
+            border-radius: 0.6rem;
+        }
+
+        input[type=checkbox]:checked + label::before {
+            left: 11%;
+        }
+
+        input[type=checkbox]:checked + label::after {
+            left: 42%;
+        }
+    </style>
+</head>
+<body>
+<div class="toggle-btn">
+    <input type="checkbox" id="checkbox1" class="oval" checked="checked">
+    <label class="toggler red" for="checkbox1"></label>
+</div>
+</body>
+</html>
